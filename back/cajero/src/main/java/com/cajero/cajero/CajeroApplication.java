@@ -1,4 +1,4 @@
-package com.cajero;
+package com.cajero.cajero;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
