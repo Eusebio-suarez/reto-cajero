@@ -7,7 +7,7 @@ export const NavBar = () => {
         to="/"
         className={({ isActive }) =>
           isActive
-            ? "text-white bg-green-700 px-3 py-1 rounded duration-400"
+            ? "text-white bg-blue-500 px-3 py-1 rounded duration-400"
             : "text-gray-300 hover:text-white"
         }
       >
@@ -18,7 +18,7 @@ export const NavBar = () => {
         to="/admin"
         className={({ isActive }) =>
           isActive
-            ? "text-white bg-green-700 px-3 py-1 rounded duration-400"
+            ? "text-white bg-blue-500 px-3 py-1 rounded duration-400"
             : "text-gray-300 hover:text-white"
         }
       >
