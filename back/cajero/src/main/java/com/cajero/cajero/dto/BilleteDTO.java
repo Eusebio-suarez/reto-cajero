@@ -4,7 +4,7 @@ import lombok.Data;
 
 
 @Data //geters y setters
-@Builder //genera automáticamente un patrón Builder 
+@Builder //genera automáticamente un patron Builder 
 public class BilleteDTO {
     private Integer denominacion;
     private Integer cantidad;
