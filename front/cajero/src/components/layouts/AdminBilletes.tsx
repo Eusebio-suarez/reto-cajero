@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Billete } from "../../types/billeteTypes";
 import { getBilletesAdmin } from "../../services/billetesServices";
+import { RotateCcw, Banknote, Layers, Calculator } from "lucide-react";
 
 export const AdminBilletes = () => {
   const [billetes, setBilletes] = useState<Billete[]>([]);
@@ -19,35 +20,52 @@ export const AdminBilletes = () => {
 
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-bold text-green-600 mb-4">Billetes del Cajero</h2>
+      <div className="flex items-center gap-3 mb-6">
+        <h2 className="text-2xl font-bold text-green-600">Billetes del Cajero</h2>
+        <button
+          onClick={fetchBilletes}
+          className="p-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+        >
+          <RotateCcw size={18} />
+        </button>
+      </div>
 
       {loading ? (
         <div className="flex items-center gap-2 mt-2">
-          <div className="w-5 h-5 border-4 border-t-4 border-green-700 border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-5 h-5 border-4 border-green-700 border-t-transparent rounded-full animate-spin"></div>
           <span className="text-gray-700">Cargando Billetes...</span>
         </div>
       ) : (
-        <div className="flex flex-wrap gap-4">
-          {billetes.map((b, i) => (
-            <div
-              key={i}
-              className="flex-1 min-w-[150px] max-w-xs border rounded-lg p-4 bg-gray-800 shadow hover:shadow-lg transition duration-300 hover:scale-105"
-            >
-              <p className="text-lg font-semibold text-blue-500">
-                Denominacion: <span className="text-green-600">${b.denominacion}</span>
-              </p>
-              <p className="text-gray-300">Cantidad: {b.cantidad}</p>
-            </div>
-          ))}
+        <div className="flex flex-wrap gap-5">
+          {billetes.map((b, i) => {
+            const total = b.denominacion * b.cantidad;
+            return (
+              <div
+                key={i}
+                className="flex-1 min-w-[200px] max-w-sm border rounded-xl p-5 bg-gray-800 shadow-md hover:shadow-xl transition duration-300 hover:scale-105"
+              >
+                <div className="flex items-center gap-2 mb-2 text-blue-400 font-semibold">
+                  <Banknote size={18} />
+                  <span>Denominación:</span>
+                  <span className="text-green-500">${b.denominacion}</span>
+                </div>
+
+                <div className="flex items-center gap-2 mb-2 text-gray-300 font-semibold">
+                  <Layers size={18} />
+                  <span>Cantidad:</span>
+                  <span>{b.cantidad}</span>
+                </div>
+
+                <div className="flex items-center gap-2 text-yellow-400 font-bold text-lg">
+                  <Calculator size={18} />
+                  <span>Total:</span>
+                  <span>${total.toLocaleString()}</span>
+                </div>
+              </div>
+            );
+          })}
         </div>
       )}
-
-      <button
-        onClick={fetchBilletes}
-        className="mt-6 px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800"
-      >
-        Actualizar
-      </button>
     </div>
   );
 };

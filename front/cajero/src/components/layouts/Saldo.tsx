@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { CardSaldo } from "./CardSaldo";
 import { getSaldoTotal } from "../../services/billetesServices";
-
+import { RotateCcw } from "lucide-react";
 export const Saldo = () => {
   const [saldo, setSaldo] = useState<number | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -22,11 +22,11 @@ export const Saldo = () => {
   return (
     <div className="flex flex-col items-center gap-4">
       <CardSaldo saldoDisponible={loading ? 0 : saldo ?? 0} />
-         <button
+      <button
         onClick={fetchSaldo}
-        className="mt-6 px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800"
+        className="mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
       >
-        Actualizar
+        <RotateCcw size={18}/>
       </button>
 
       {loading && (
