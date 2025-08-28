@@ -9,6 +9,5 @@ import com.cajero.cajero.entity.Billete;
 
 @Repository
 public interface BilleteRepository extends JpaRepository<Billete,Integer> {
-
     List<Billete> findAllByOrderByDenominacionDesc();
 }
