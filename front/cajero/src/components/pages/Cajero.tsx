@@ -1,8 +1,10 @@
 import { HistorialRetiros } from "../layouts/HistorialRetiros"
+import { SeccionCajero } from "../layouts/SeccionCajero"
 export const Cajero = () => {
   return (
-    <div>
-        <HistorialRetiros></HistorialRetiros>
+    <div className="">
+      <SeccionCajero></SeccionCajero>
+      <HistorialRetiros></HistorialRetiros>
     </div>
   )
 }

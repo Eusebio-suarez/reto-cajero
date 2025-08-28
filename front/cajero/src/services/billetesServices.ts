@@ -25,3 +25,22 @@ export const getBilletesAdmin = async (): Promise<Billete[] | null> => {
     return null;
   }
 };
+
+export const realizarRetiroApi = async (monto: number): Promise<Billete[]> => {
+  try {
+    const response = await fetch(`http://localhost:8080/retiros/retirar?monto=${monto}`, {
+      method: "POST",
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
+
+    const billetes: Billete[] = await response.json();
+    return billetes;
+  } catch (error) {
+    console.error("Error en retiro:", error);
+    return [];
+  }
+};
+
