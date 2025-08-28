@@ -24,7 +24,7 @@ export const AdminBilletes = () => {
         <h2 className="text-2xl font-bold text-green-600">Billetes del Cajero</h2>
         <button
           onClick={fetchBilletes}
-          className="p-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+          className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
         >
           <RotateCcw size={18} />
         </button>
@@ -44,22 +44,22 @@ export const AdminBilletes = () => {
                 key={i}
                 className="flex-1 min-w-[200px] max-w-sm border rounded-xl p-5 bg-gray-800 shadow-md hover:shadow-xl transition duration-300 hover:scale-105"
               >
-                <div className="flex items-center gap-2 mb-2 text-blue-400 font-semibold">
+                <div className="flex items-center gap-2 mb-2 text-green-500 font-semibold">
                   <Banknote size={18} />
                   <span>Denominación:</span>
-                  <span className="text-green-500">${b.denominacion}</span>
+                  <span className="text-blue-500 font-bold">${b.denominacion}</span>
                 </div>
 
-                <div className="flex items-center gap-2 mb-2 text-gray-300 font-semibold">
+                <div className="flex items-center text-orange-500 gap-2 mb-2 font-semibold">
                   <Layers size={18} />
                   <span>Cantidad:</span>
-                  <span>{b.cantidad}</span>
+                  <span className="text-gray-300">{b.cantidad}</span>
                 </div>
 
-                <div className="flex items-center gap-2 text-yellow-400 font-bold text-lg">
+                <div className="flex items-center gap-2 text-amber-400 font-bold text-lg">
                   <Calculator size={18} />
                   <span>Total:</span>
-                  <span>${total.toLocaleString()}</span>
+                  <span className="text-blue-500">${total.toLocaleString()}</span>
                 </div>
               </div>
             );

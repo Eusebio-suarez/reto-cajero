@@ -12,12 +12,12 @@ export const CardSaldo: React.FC<Banco> = ({ saldoDisponible }) => {
         <Wallet className="w-10 h-10 text-green-400" />
       </div>
 
-      <h2 className="text-xl font-semibold text-gray-200">
+      <h2 className="text-xl font-semibold text-amber-400">
         Saldo disponible
       </h2>
 
       <p className="text-4xl font-bold text-blue-500 flex items-center gap-2">
-        <Banknote className="w-8 h-8 text-gray-300" />
+        <Banknote className="w-8 h-8 text-green-400" />
         ${saldoDisponible.toLocaleString()}
       </p>
     </div>

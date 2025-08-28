@@ -9,7 +9,7 @@ export const NavBar = () => {
         to="/"
         className={({ isActive }) =>
           `flex items-center gap-2 px-3 py-1 rounded transition-colors duration-300 ${
-            isActive ? "text-white bg-blue-600" : "text-gray-300 hover:text-white"
+            isActive ? "text-white bg-blue-500" : "text-gray-300 hover:text-white"
           }`
         }
       >
@@ -21,7 +21,7 @@ export const NavBar = () => {
         to="/cajero"
         className={({ isActive }) =>
           `flex items-center gap-2 px-3 py-1 rounded transition-colors duration-300 ${
-            isActive ? "text-white bg-blue-600" : "text-gray-300 hover:text-white"
+            isActive ? "text-white bg-blue-500" : "text-gray-300 hover:text-white"
           }`
         }
       >
@@ -33,7 +33,7 @@ export const NavBar = () => {
         to="/admin"
         className={({ isActive }) =>
           `flex items-center gap-2 px-3 py-1 rounded transition-colors duration-300 ${
-            isActive ? "text-white bg-blue-600" : "text-gray-300 hover:text-white"
+            isActive ? "text-white bg-blue-500" : "text-gray-300 hover:text-white"
           }`
         }
       >
