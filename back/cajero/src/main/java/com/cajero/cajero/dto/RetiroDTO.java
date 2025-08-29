@@ -1,13 +1,14 @@
 package com.cajero.cajero.dto;
 
+import java.time.LocalDateTime;
+
 import lombok.Builder;
 import lombok.Data;
-import java.time.LocalDateTime;
 
 @Data // genera getters y setters
 @Builder // genera automáticamente un patrón Builder
 public class RetiroDTO {
-    private long id;
+    private Long id;
     private Integer monto;
     private LocalDateTime fecha;
 }

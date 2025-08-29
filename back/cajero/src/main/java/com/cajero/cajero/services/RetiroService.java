@@ -1,10 +1,10 @@
 package com.cajero.cajero.services;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +29,7 @@ public class RetiroService {
             return retiroRepository.findAllByOrderByFechaDesc()
                 .stream()
                 .map(retiro -> RetiroDTO.builder()
+                        .id(retiro.getId())
                         .monto(retiro.getMonto())
                         .fecha(retiro.getFecha()) 
                         .build())
@@ -104,9 +105,9 @@ public class RetiroService {
         nuevoRetiro.setFecha(LocalDateTime.now());
 
         //guardar el retiro en la base de datos
-        Retiro retiroGuardado = retiroRepository.save(nuevoRetiro);
+        retiroRepository.save(nuevoRetiro);
 
-        //debolber lo billetes que se utilizaron
+        //devolver lo billetes que se utilizaron
         return billetesPorDenominacion;
     }
 
