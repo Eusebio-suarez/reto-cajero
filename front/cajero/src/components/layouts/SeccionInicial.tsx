@@ -5,7 +5,7 @@ export const SeccionInicial = () => {
   return (
     <section className="flex items-center justify-center">
       <div className="flex flex-col items-center justify-center text-white p-6">
-        <div className="bg-white/10 p-6 rounded-full shadow-xl mb-6 ">
+        <div className="bg-blue-950 p-6 rounded-full shadow-xl shadow-green-600/20 mb-6 hover:scale-105 transition duration-300 ">
           <Landmark className="w-20 h-20 text-green-400" />
         </div>
         <h1 className="text-4xl font-extrabold mb-4 bg-gradient-to-r from-green-400 to-indigo-600 bg-clip-text text-transparent drop-shadow-md">
